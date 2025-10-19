@@ -1,0 +1,33 @@
+
+DATA OVERVIEW:
+- Total songs analyzed: 651,936
+- Unique songs: 9,161
+- Date range: 2017-01-01 to 2023-05-29
+
+TEMPORAL CLUSTERING:
+- Number of clusters: 6
+- Silhouette Score: 0.300
+- Davies-Bouldin Score: 1.322
+- Largest cluster: Spring - Friday Fresh (2,512 songs)
+- Smallest cluster: Recent Era (2022-2023) - Winter (217 songs)
+
+PERFORMANCE CLUSTERING:
+- Number of clusters: 4
+- Silhouette Score: 0.366
+- Davies-Bouldin Score: 0.982
+- Largest cluster: Mid-Chart Mainstay (4,127 songs)
+- Smallest cluster: Lower-Chart Resident (517 songs)
+
+FILES GENERATED:
+temporal_features_with_clusters.csv
+temporal_cluster_centroids.csv
+performance_features_with_clusters.csv
+performance_cluster_centroids.csv
+spotify_data_with_clusters.csv
+Multiple visualization PNG files
+
+NEXT STEPS:
+1. Review cluster names and characteristics
+2. Use these cluster assignments as meta-features for prediction tasks
+3. Implement additional clustering dimensions (audio, artist tier, network, etc.)
+4. Build prediction models using cluster memberships
