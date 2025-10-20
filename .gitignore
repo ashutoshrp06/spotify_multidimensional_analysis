@@ -12,8 +12,6 @@ env/
 
 # Data and output files
 *.csv
-*.png
-*.jpg
 
 # OS-specific files
 .DS_Store
