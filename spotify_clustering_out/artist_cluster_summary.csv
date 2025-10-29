@@ -1,0 +1,5 @@
+,avg_points,avg_points,avg_points,total_points,total_points,total_points,artist_song_count,artist_song_count,artist_song_count
+,mean,median,count,mean,median,count,mean,median,count
+Artist_Cluster,,,,,,,,,
+0,86.577,91.7471,37,512875.22,424924.5,37,6039.3514,5116.0,37
+1,44.6816,37.7273,2171,12997.7,1444.0,2171,197.3653,45.0,2171
