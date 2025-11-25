@@ -12,6 +12,8 @@ env/
 
 # Data and output files
 *.csv
+data\raw\Spotify_Dataset_V3.csv
+data\raw\spotify_songs.csv
 
 # OS-specific files
 .DS_Store
