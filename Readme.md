@@ -22,17 +22,84 @@ Once these clusters are identified and songs are tagged with their membership ac
 
 The codebase is organized to facilitate reproducible analysis. The notebooks directory contains all analytical workflows, while the outputs directory stores generated visualizations, trained clustering models, and summary reports. Model artifacts including trained predictors, scalers, and encoders live at the root level. The data directory holds processed datasets, and various mapping files translate cluster IDs into human-readable labels.
 
+```
+spotify_multidimensional_analysis/
+│
+├── all_clusters/
+│   ├── All_Clusters.ipynb                          # Multidimensional clustering notebook
+│   └── Spotify_Dataset_V3_All_Clusters_v2.csv      # Augmented dataset with cluster assignments
+│
+├── data/
+│   └── processed/
+│       └── clustering_summary_report.txt            # Summary statistics of clustering results
+│
+├── outputs/
+│   ├── models/
+│   │   ├── geo_kmeans5.joblib                       # Geographic clustering model
+│   │   ├── geo_scaler.joblib                        # Scaler for geographic features
+│   │   ├── imputer.joblib                           # Missing value imputer
+│   │   ├── kmeans_k3.joblib                         # K-means clustering model (k=3)
+│   │   └── scaler.joblib                            # General feature scaler
+│   │
+│   └── figures/
+│       ├── Audio Evolution Clusters.png
+│       ├── artist_cluster_elbow_plot.png
+│       ├── cluster_crosstab_heatmap.png
+│       ├── heatmap_average_rank.png
+│       ├── heatmap_count.png
+│       ├── pca_sonic_clusters.png
+│       ├── performance_categories.png
+│       ├── performance_cluster_optimization.png
+│       ├── performance_clusters_visualization.png
+│       ├── performance_distributions.png
+│       ├── sonic_cluster_elbow_plot.png
+│       ├── sustained_success_distributions.png
+│       ├── sustained_success_distributions.svg
+│       ├── temporal_cluster_optimization.png
+│       ├── temporal_clusters_visualization.png
+│       ├── temporal_eda.png
+│       ├── temporal_trends.png
+│       ├── unique_songs_cluster_plot.png
+│       ├── unique_songs_elbow_plot.png
+│       └── unique_songs_silhouette_plot.png
+│
+└── notebooks/
+    ├── Ablation_Test.ipynb                          # Feature ablation analysis
+    ├── All_Clusters.ipynb                           # Main clustering pipeline
+    ├── Binary_Classification.ipynb                  # Binary success prediction
+    ├── Plot_Merge.ipynb                             # Visualization merging utility
+    ├── eda_test.ipynb                               # Exploratory data analysis
+    ├── multiclass_prediction.ipynb                  # 4-class success prediction
+    ├── multiclass_prediction_3_class.ipynb          # 3-class success prediction
+    └── regression_v6.ipynb                          # Chart duration regression
+```
+
 ## Getting Started
 
 To run this analysis, you'll need a Python environment with standard data science libraries. Install pandas, numpy, scikit-learn, matplotlib, seaborn, and jupyter notebook. For specific model implementations, you may also need joblib and other supporting packages that are imported within the notebooks.
 
 ## Running the Analysis
 
-The notebooks must be executed in a specific order to ensure proper data flow. Start by running All_Clusters.ipynb, which performs all multidimensional clustering operations and appends cluster assignments to the original dataset. This step is crucial because all subsequent analyses depend on these cluster features.
+### Step 1: Run Clustering (Required First)
+- **Execute `All_Clusters.ipynb`** - This performs all multidimensional clustering operations and appends cluster assignments to the dataset
+- **Critical**: All subsequent analyses depend on the cluster features generated in this step
 
-After clustering is complete, you can run the other notebooks in any order based on your analysis goals. The Binary_Classification notebook builds models to predict whether songs achieve sustained success, defined as staying in the Top 200 for at least eight weeks. For a more nuanced view, multiclass_prediction explores four success categories ranging from brief appearances to lasting hits, while multiclass_prediction_3_class offers a simplified three-category version.
+### Step 2: Run Analysis Notebooks (Any Order)
 
-If you're interested in predicting the exact duration of chart presence, regression_v6 models the number of weeks a song will remain in the Top 200. The Ablation_Test notebook conducts ablation studies to understand which feature groups contribute most to model performance. For exploratory analysis, eda_test provides visualizations and statistical summaries of the dataset. Finally, Plot_Merge is a utility notebook that combines multiple cluster visualization images into unified figures for presentation.
+**Classification Tasks:**
+- `Binary_Classification.ipynb` - Predicts sustained success (songs staying in Top 200 for ≥8 weeks)
+- `multiclass_prediction.ipynb` - Predicts four success categories (brief to lasting hits)
+- `multiclass_prediction_3_class.ipynb` - Simplified three-category success prediction
+
+**Regression Task:**
+- `regression_v6.ipynb` - Predicts exact number of weeks a song will remain in Top 200
+
+**Analysis & Evaluation:**
+- `Ablation_Test.ipynb` - Tests which feature groups contribute most to model performance
+- `eda_test.ipynb` - Exploratory data analysis with visualizations and statistical summaries
+
+**Utilities:**
+- `Plot_Merge.ipynb` - Combines multiple cluster visualization images into unified figures
 
 ## Key Findings
 
