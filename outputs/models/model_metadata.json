@@ -1,0 +1,39 @@
+{
+    "model_name": "XGBoost (Original)",
+    "model_type": "XGBoost",
+    "is_tuned": false,
+    "hyperparameters": "Default/Original",
+    "performance_metrics": {
+        "f1_score": 0.5318278954581215,
+        "accuracy": 0.5619203491543917,
+        "precision": 0.5364717752855581,
+        "recall": 0.5619203491543917
+    },
+    "training_date": "2025-11-26 23:41:18",
+    "features_used": [
+        "Sonic_Cluster",
+        "Artist_Tier",
+        "Temporal_Cluster",
+        "Performance_Cluster",
+        "Geo_Cluster_ID",
+        "Collab_Cluster_ID",
+        "Evo_Cluster_ID",
+        "Danceability",
+        "Energy",
+        "Loudness",
+        "Speechiness",
+        "Acousticness",
+        "Instrumentalness",
+        "Valence"
+    ],
+    "num_features": 14,
+    "target_classes": [
+        "Brief Hit",
+        "Flop",
+        "Long-Term Hit",
+        "Sustained Success"
+    ],
+    "train_size": 7328,
+    "test_size": 1833,
+    "note": "Selected as best performing model from all candidates (original and tuned)"
+}

@@ -34,44 +34,114 @@ spotify_multidimensional_analysis/
 │       └── clustering_summary_report.txt            # Summary statistics of clustering results
 │
 ├── outputs/
+│   ├── clustering_summary_report.txt                # Summary statistics (duplicate location)
+│   │
 │   ├── models/
+│   │   ├── feature_scaler.pkl                       # Feature scaler for final model
+│   │   ├── feature_scaler_3class.pkl                # Feature scaler for 3-class model
+│   │   ├── final_model.pkl                          # Trained final classification model
+│   │   ├── final_model_3class.pkl                   # Trained 3-class classification model
 │   │   ├── geo_kmeans5.joblib                       # Geographic clustering model
 │   │   ├── geo_scaler.joblib                        # Scaler for geographic features
 │   │   ├── imputer.joblib                           # Missing value imputer
 │   │   ├── kmeans_k3.joblib                         # K-means clustering model (k=3)
+│   │   ├── label_encoder.pkl                        # Label encoder for final model
+│   │   ├── model_metadata.json                      # Metadata for final model
+│   │   ├── model_metadata_3class.json               # Metadata for 3-class model
+│   │   ├── pca_transformer.pkl                      # PCA transformer for final model
+│   │   ├── pca_transformer_3class.pkl               # PCA transformer for 3-class model
 │   │   └── scaler.joblib                            # General feature scaler
 │   │
 │   └── figures/
 │       ├── Audio Evolution Clusters.png
+│       ├── all_models_comparison_final_3class.png
+│       ├── all_models_final_comparison.png
 │       ├── artist_cluster_elbow_plot.png
+│       ├── binary_ablation_study_results.svg
 │       ├── cluster_crosstab_heatmap.png
+│       ├── cluster_type_importance_3class.png
+│       ├── combined_pca_cluster_plots.svg
+│       ├── confusion_matrices_all_models.png
+│       ├── confusion_matrices_all_models_3class.png
+│       ├── eda_audio_features.png
+│       ├── eda_audio_features_3class.png
+│       ├── eda_cluster_distributions.png
+│       ├── eda_cluster_distributions_3class.png
+│       ├── eda_correlation_matrix.png
+│       ├── eda_correlation_matrix_3class.png
+│       ├── eda_target_analysis.png
+│       ├── eda_target_analysis_3class.png
+│       ├── feature_importance_by_type.png
+│       ├── feature_importance_by_type_3class.png
+│       ├── feature_importance_final_3class.png
+│       ├── feature_importance_final_model.png
+│       ├── final_model_confusion_matrix.png
+│       ├── final_model_confusion_matrix_3class.png
+│       ├── granular_ablation_study_results.png
 │       ├── heatmap_average_rank.png
 │       ├── heatmap_count.png
+│       ├── model_comparison.png
+│       ├── model_comparison_3class.png
 │       ├── pca_sonic_clusters.png
-│       ├── performance_categories.png
-│       ├── performance_cluster_optimization.png
-│       ├── performance_clusters_visualization.png
-│       ├── performance_distributions.png
-│       ├── sonic_cluster_elbow_plot.png
+│       ├── pca_variance_analysis.png
+│       ├── pca_variance_analysis_3class.png
+│       ├── per_class_performance.png
+│       ├── per_class_performance_3class.png
+│       ├── prediction_confidence_3class.png
+│       ├── prediction_confidence_analysis.png
+│       ├── smote_comparison_3class.png
+│       ├── success_category_distribution.png
+│       ├── success_category_distribution_3class.png
 │       ├── sustained_success_distributions.png
 │       ├── sustained_success_distributions.svg
 │       ├── temporal_cluster_optimization.png
 │       ├── temporal_clusters_visualization.png
 │       ├── temporal_eda.png
 │       ├── temporal_trends.png
+│       ├── tuned_models_confusion_matrices.png
+│       ├── tuned_models_confusion_matrices_3class.png
+│       ├── tuning_comparison.png
+│       ├── tuning_comparison_3class.png
 │       ├── unique_songs_cluster_plot.png
 │       ├── unique_songs_elbow_plot.png
 │       └── unique_songs_silhouette_plot.png
 │
-└── notebooks/
-    ├── Ablation_Test.ipynb                          # Feature ablation analysis
-    ├── All_Clusters.ipynb                           # Main clustering pipeline
-    ├── Binary_Classification.ipynb                  # Binary success prediction
-    ├── Plot_Merge.ipynb                             # Visualization merging utility
-    ├── eda_test.ipynb                               # Exploratory data analysis
-    ├── multiclass_prediction.ipynb                  # 4-class success prediction
-    ├── multiclass_prediction_3_class.ipynb          # 3-class success prediction
-    └── regression_v6.ipynb                          # Chart duration regression
+├── notebooks/
+│   ├── Ablation_Test.ipynb                          # Feature ablation analysis
+│   ├── All_Clusters.ipynb                           # Main clustering pipeline
+│   ├── Binary_Classification.ipynb                  # Binary success prediction
+│   ├── Plot_Merge.ipynb                             # Visualization merging utility
+│   ├── Regression.ipynb                             # Chart duration regression
+│   ├── eda_test.ipynb                               # Exploratory data analysis
+│   ├── multiclass_prediction.ipynb                  # 4-class success prediction
+│   └── multiclass_prediction_3_class.ipynb          # 3-class success prediction
+│
+├── report/
+│   ├── 30_Final_report.pdf                          # Final project report
+│   ├── template.tex                                 # LaTeX template
+│   ├── refs.bib                                     # Bibliography
+│   ├── nips_2016.sty                                # NIPS style file
+│   ├── lineno.sty                                   # Line numbering style
+│   ├── nicefrac.sty                                 # Nice fractions style
+│   └── figs/                                        # Report figures
+│       ├── PCA_regression.png
+│       ├── actual_vs_pred_regression.png
+│       ├── all_models_comparison_final_3class.png
+│       ├── combined_pca_cluster_plots_final.png
+│       ├── feature_importance.svg
+│       ├── feature_importance_by_type_3class.png
+│       ├── feature_importance_final_3class.png
+│       ├── final_model_confusion_matrix_3class.png
+│       ├── learning_curves_regression.png
+│       ├── per_class_performance_3class.png
+│       ├── precision_recall_curve.svg
+│       ├── prediction_confidence_3class.png
+│       ├── reg_res_1.png
+│       ├── reg_res_2.png
+│       ├── reg_res_3.png
+│       ├── regression_target_skew.png
+│       ├── roc_curve_comparison.svg
+│       └── sustained.svg
 ```
 
 ## Getting Started

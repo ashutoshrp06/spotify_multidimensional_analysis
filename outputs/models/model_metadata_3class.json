@@ -1,0 +1,38 @@
+{
+    "model_name": "Gradient Boosting",
+    "f1_score": 0.5886368858656933,
+    "accuracy": 0.5891980360065466,
+    "precision": 0.5908895102297773,
+    "recall": 0.5891980360065466,
+    "training_date": "2025-11-26 23:52:58",
+    "features_used": [
+        "Sonic_Cluster",
+        "Artist_Tier",
+        "Temporal_Cluster",
+        "Performance_Cluster",
+        "Geo_Cluster_ID",
+        "Collab_Cluster_ID",
+        "Evo_Cluster_ID",
+        "Danceability",
+        "Energy",
+        "Loudness",
+        "Speechiness",
+        "Acousticness",
+        "Instrumentalness",
+        "Valence"
+    ],
+    "num_features": 14,
+    "target_classes": [
+        "Flop",
+        "Long-Term Hit",
+        "Moderate Hit"
+    ],
+    "train_size": 7328,
+    "test_size": 1833,
+    "hyperparameters": "Default parameters",
+    "approaches_tested": {
+        "hyperparameter_tuning": "Degraded performance",
+        "smote": "Minimal impact",
+        "original": "Best performance"
+    }
+}
