@@ -25,10 +25,6 @@ The codebase is organized to facilitate reproducible analysis. The notebooks dir
 ```
 spotify_multidimensional_analysis/
 │
-├── all_clusters/
-│   ├── All_Clusters.ipynb                          # Multidimensional clustering notebook
-│   └── Spotify_Dataset_V3_All_Clusters_v2.csv      # Augmented dataset with cluster assignments
-│
 ├── data/
 │   └── processed/
 │       └── clustering_summary_report.txt            # Summary statistics of clustering results
@@ -146,7 +142,11 @@ spotify_multidimensional_analysis/
 
 ## Getting Started
 
-To run this analysis, you'll need a Python environment with standard data science libraries. Install pandas, numpy, scikit-learn, matplotlib, seaborn, and jupyter notebook. For specific model implementations, you may also need joblib and other supporting packages that are imported within the notebooks.
+To run this analysis, you'll need a Python environment with standard data science libraries. Install pandas, numpy, scikit-learn, matplotlib, seaborn, and jupyter notebook. For specific model implementations, you may also need joblib and other supporting packages that are imported within the notebooks. For a complete list of libraries and their versions, refer to `requirements.txt`. Install all dependencies using:
+
+```bash
+pip install -r requirements.txt
+```
 
 ## Running the Analysis
 
