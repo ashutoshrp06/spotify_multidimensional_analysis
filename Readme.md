@@ -142,6 +142,8 @@ spotify_multidimensional_analysis/
 
 ## Getting Started
 
+- **Data Setup**: Place your input data files in the `data/raw/` directory before running any analysis notebooks.
+
 To run this analysis, you'll need a Python environment with standard data science libraries. Install pandas, numpy, scikit-learn, matplotlib, seaborn, and jupyter notebook. For specific model implementations, you may also need joblib and other supporting packages that are imported within the notebooks. For a complete list of libraries and their versions, refer to `requirements.txt`. Install all dependencies using:
 
 ```bash
@@ -162,7 +164,7 @@ pip install -r requirements.txt
 - `multiclass_prediction_3_class.ipynb` - Simplified three-category success prediction
 
 **Regression Task:**
-- `regression_v6.ipynb` - Predicts exact number of weeks a song will remain in Top 200
+- `Regression.ipynb` - Predicts exact number of weeks a song will remain in Top 200
 
 **Analysis & Evaluation:**
 - `Ablation_Test.ipynb` - Tests which feature groups contribute most to model performance
